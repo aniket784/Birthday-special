@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aparna!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .confetti {
+            position: fixed;
+            z-index: 50;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+        .card-gradient {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .tab-content {
+            display: none;
+        }
+        .active-tab {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gift-btn {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .gift-btn:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div id="shower-container" class="fixed inset-0 pointer-events-none z-50"></div>
+
+    <main class="max-w-4xl mx-auto relative z-10">
+        <!-- Header Section -->
+        <header class="text-center mb-10 floating">
+            <h1 class="text-6xl md:text-8xl font-bold text-pink-600 mb-4 cursive">Happy Birthday, Appu!</h1>
+            <p class="text-xl text-gray-600 italic mb-8">To the world, you are Aparna. To me, you are magic.</p>
+            
+            <button onclick="showerGifts()" class="gift-btn bg-gradient-to-r from-pink-500 to-rose-400 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 flex items-center gap-2 mx-auto transition-all">
+                <span>🎁 Shower Appu with Love! 🎂</span>
+            </button>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center gap-4 mb-8 overflow-x-auto py-2">
+            <button onclick="showTab('home')" class="px-6 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all font-semibold text-pink-500 whitespace-nowrap">Home</button>
+            <button onclick="showTab('reasons')" class="px-6 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all font-semibold text-pink-500 whitespace-nowrap">Reasons</button>
+            <button onclick="showTab('cake')" class="px-6 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all font-semibold text-pink-500 whitespace-nowrap">Cake</button>
+            <button onclick="showTab('wishes')" class="px-6 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all font-semibold text-pink-500 whitespace-nowrap">Wishes</button>
+        </div>
+
+        <!-- Tab 1: Home/Hero -->
+        <section id="home" class="tab-content active-tab">
+            <div class="card-gradient rounded-3xl p-10 text-center shadow-xl border-2 border-pink-100">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6 cursive">Dearest Appu...</h2>
+                <p class="text-gray-700 leading-relaxed text-xl italic max-w-2xl mx-auto">
+                    "Another year has passed, and you continue to brighten every life you touch. 
+                    May your birthday be as beautiful, kind, and wonderful as you are. Today is all about 
+                    celebrating the incredible person you have become. You are one in a million!"
+
+                    Sherr! bakchodi rukni nhi chahiye 
+                </p>
+                <div class="mt-10 flex justify-center gap-6">
+                    <span class="text-5xl animate-bounce">✨</span>
+                    <span class="text-5xl animate-bounce" style="animation-delay: 0.2s">💖</span>
+                    <span class="text-5xl animate-bounce" style="animation-delay: 0.4s">🌟</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: Reasons Why -->
+        <section id="reasons" class="tab-content">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8 cursive">Why Appu is the Best</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border-l-4 border-pink-400">
+                    <p class="font-bold text-pink-600 mb-2">01. Heart</p>
+                    <p class="text-gray-600">The way you care for everyone around you is truly inspiring.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border-l-4 border-pink-400">
+                    <p class="font-bold text-pink-600 mb-2">02. Smile</p>
+                    <p class="text-gray-600">One smile from you can turn the cloudiest day into sunshine.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border-l-4 border-pink-400">
+                    <p class="font-bold text-pink-600 mb-2">03.Strength</p>
+                    <p class="text-gray-600">Aparna, you handle every challenge with calm and patience.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border-l-4 border-pink-400">
+                    <p class="font-bold text-pink-600 mb-2">04. Wisdom</p>
+                    <p class="text-gray-600">You always know exactly what to say when I need advice.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border-l-4 border-pink-400">
+                    <p class="font-bold text-pink-600 mb-2">05. Problem solver</p>
+                    <p class="text-gray-600">You solved all my problems, whether it was related to GF.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border-l-4 border-pink-400">
+                    <p class="font-bold text-pink-600 mb-2">06. Life saver</p>
+                    <p class="text-gray-600">Mujhe daatne ke liye aur hamesha mujhe khatree se bachane ke liye thank you</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 3: Virtual Cake -->
+        <section id="cake" class="tab-content">
+            <div class="card-gradient rounded-3xl p-12 text-center shadow-xl">
+                <div class="relative inline-block">
+                    <svg width="200" height="200" viewBox="0 0 200 200" class="mx-auto">
+                        <rect x="40" y="120" width="120" height="60" rx="10" fill="#fbcfe8" />
+                        <rect x="50" y="80" width="100" height="40" rx="10" fill="#f472b6" />
+                        <rect x="95" y="40" width="10" height="40" fill="#fbbf24" id="candle" />
+                        <path d="M100 20 Q105 30 100 40 Q95 30 100 20" fill="#f59e0b" id="flame" class="floating" />
+                    </svg>
+                    <div id="cake-message" class="mt-4 hidden font-bold text-pink-600 text-xl animate-bounce">
+                        Make a wish, Appu Stand ! 🕯️✨
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <button onclick="blowCandle()" id="blow-btn" class="bg-pink-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-pink-600 transition-all">
+                        Blow the Candle!
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 4: Wishes -->
+        <section id="wishes" class="tab-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card-gradient p-6 rounded-2xl shadow-lg border-t-4 border-yellow-400">
+                    <p class="text-gray-700 italic">"May this year bring you as much joy as you bring to everyone else. Happy Birthday, Appu!"</p>
+                    <p class="mt-4 text-right font-bold text-gray-800">- Your best friend </p>
+                </div>
+                <div class="card-gradient p-6 rounded-2xl shadow-lg border-t-4 border-blue-400">
+                    <p class="text-gray-700 italic">"To Aparna, who is beautiful inside and out. Keep shining brighter than ever!"</p>
+                    <p class="mt-4 text-right font-bold text-gray-800">- Forever yours</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center p-8 bg-white rounded-3xl shadow-md">
+                <h3 class="text-2xl font-bold mb-4">Leave a Birthday Note and screenshot to me.</h3>
+                <textarea id="user-note" class="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-300 outline-none" rows="3" placeholder="Write something sweet for Appu..."></textarea>
+                <button onclick="saveNote()" class="mt-4 bg-pink-500 text-white px-8 py-2 rounded-full font-bold">Add to the Wall</button>
+                <div id="notes-wall" class="mt-8 flex flex-wrap justify-center gap-4">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center mt-12 text-gray-500 pb-8">
+        <p>Made with ❤️ for Appu's special day</p>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            document.getElementById(tabId).classList.add('active-tab');
+        }
+
+        function showerGifts() {
+            const container = document.getElementById('shower-container');
+            const items = ['🎂', '🎁', '💖', '🎈', '🍰', '✨', '🍭', '⭐', '🌸'];
+            const count = 45;
+
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'confetti text-3xl md:text-5xl';
+                    el.innerText = items[Math.floor(Math.random() * items.length)];
+                    el.style.left = Math.random() * 100 + 'vw';
+                    
+                    const duration = 2.5 + Math.random() * 3;
+                    el.style.animationDuration = duration + 's';
+                    
+                    container.appendChild(el);
+                    
+                    setTimeout(() => el.remove(), duration * 1000);
+                }, i * 80);
+            }
+        }
+
+        function blowCandle() {
+            const flame = document.getElementById('flame');
+            const message = document.getElementById('cake-message');
+            const btn = document.getElementById('blow-btn');
+            
+            flame.style.display = 'none';
+            message.classList.remove('hidden');
+            btn.innerText = "Wish Granted! ✨";
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            
+            showerGifts();
+        }
+
+        function saveNote() {
+            const text = document.getElementById('user-note').value;
+            if (!text.trim()) return;
+
+            const wall = document.getElementById('notes-wall');
+            const note = document.createElement('div');
+            note.className = 'bg-yellow-100 p-4 rounded-lg shadow-sm transform rotate-2 max-w-xs transition-all hover:scale-105';
+            note.innerHTML = `<p class="text-sm text-gray-700 font-medium">${text}</p>`;
+            
+            wall.appendChild(note);
+            document.getElementById('user-note').value = '';
+            
+            showerGifts();
+        }
+
+        window.onload = () => {
+            setTimeout(showerGifts, 500);
+        };
+    </script>
+</body>
+</html>
